@@ -144,6 +144,7 @@ values."
    ;; Sample fonts
    ;; FiraCode Nerd Font
    ;; FuraCode Nerd Font
+   ;; Source Code Pro
    dotspacemacs-default-font '("FiraCode Nerd Font"
                                :size 18
                                :weight regular
