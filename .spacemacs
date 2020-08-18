@@ -31,7 +31,12 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
+     lsp
+     (python :variables
+             python-backend 'lsp
+             python-tab-width 4
+             python-format-on-save t
+             python-sort-imports-on-save t)
      html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -135,11 +140,11 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
 
-   ; Sample fonts
+   ;; Sample fonts
    ;; FiraCode Nerd Font
    ;; FuraCode Nerd Font
-   dotspacemacs-default-font '("FuraCode Nerd Font"
-                               :size 20
+   dotspacemacs-default-font '("FiraCode Nerd Font"
+                               :size 18
                                :weight regular
                                :width regular
                                :powerline-scale 1.1)
@@ -315,6 +320,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (add-hook 'python-mode-hook (lambda ()
+                                (flycheck-mode 1)
+                                (setq flycheck-checker 'python-pylint
+                                      flycheck-pylintrc "~/.pylintrc")))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
