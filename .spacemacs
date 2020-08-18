@@ -57,7 +57,18 @@ values."
             shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
-     version-control
+     ;; version-control
+
+     ;; Required pandoc to be installed
+     pandoc
+
+     ;; For org-reveal
+     ;; http://jr0cket.co.uk/2017/03/org-mode-driven-presentations-with-org-reveal-spacemacs.html
+     (org :variables
+          org-enable-reveal-js-support t
+          org-enable-bootstrap-support t)
+     ;; Required by org-reveal
+     html
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -279,7 +290,7 @@ values."
    dotspacemacs-folding-method 'evil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
@@ -323,13 +334,21 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
   (add-hook 'python-mode-hook (lambda ()
                                 (yapf-mode 1)
                                 (flycheck-mode 1)
                                 (setq flycheck-checker 'python-pylint
                                       flycheck-pylintrc "~/.pylintrc"))
                                 (setq-default python-indent-offset 4))
+  (setq userPath (file-truename "~/reveal.js"))
+
+  (setq org-reveal-root (concat "file://" userPath)
+        )
+
+  (setq org-image-actual-width nil)
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
