@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;; Themes-megapack conflict with font-size
      ;; themes-megapack
      ;; lsp
      (python :variables
