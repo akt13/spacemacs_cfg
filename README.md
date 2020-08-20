@@ -28,3 +28,7 @@ then just add it to your dotspacemacs:
 (push dotspacemacs-additional-packages
   '((vterm :location "/path/to/your/clone/of/emacs-libvterm")))
 ```
+
+## UTF-8 configuration for shell
+
+https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
