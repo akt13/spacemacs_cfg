@@ -1,34 +1,48 @@
-# spacemacs_cfg
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:nil arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: README
+#+date: <2020-08-20 Thu>
+#+author: Sarath M
+#+email: sarath@Saraths-MacBook-Pro.local
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3.7)
+
+
+* spacemacs_cfg
 spacemacs config file
 
-## Installing Vterm
-``` sh
+** Installing Vterm
+#+BEGIN_SRC sh
 git clone https://github.com/akermu/emacs-libvterm.git
 mkdir -p build
 cd build
 cmake ..
 make
-```
+#+END_SRC
 
 Don't forget to first install libvterm in your system:
-``` sh
+#+BEGIN_SRC sh
 brew install libvterm
-```
+#+END_SRC
 
 
 or
 
-``` sh
+#+BEGIN_SRC sh
 sudo apt-get install libvterm
-```
+#+END_SRC
 
 then just add it to your dotspacemacs:
 
-``` lisp
+#+BEGIN_SRC lisp
 (push dotspacemacs-additional-packages
   '((vterm :location "/path/to/your/clone/of/emacs-libvterm")))
-```
+#+END_SRC
 
-## UTF-8 configuration for shell
+** UTF-8 configuration for shell
 
 https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
