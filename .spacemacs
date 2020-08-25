@@ -34,6 +34,9 @@ values."
      ;; Themes-megapack conflict with font-size
      ;; themes-megapack
      ;; lsp
+
+     ;; for customising thems
+     theming
      (python :variables
              python-backend 'anaconda
              python-tab-width 4
@@ -337,6 +340,15 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq theming-modifications
+        '((wombat
+           ;; Font locking
+           (font-lock-comment-face :slant italic)
+           (web-mode-html-attr-name-face :inherit font-lock-variable-name-face
+                                         :foreground nil)
+           )
+          )
+        )
   )
 
 (defun dotspacemacs/user-config ()
