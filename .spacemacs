@@ -340,8 +340,9 @@ you should place your code here."
                                 (yapf-mode 1)
                                 (flycheck-mode 1)
                                 (setq flycheck-checker 'python-pylint
-                                      flycheck-pylintrc "~/.pylintrc"))
-                                (setq-default python-indent-offset 4))
+                                      flycheck-pylintrc "~/.pylintrc")
+                                (setq-default python-indent-offset 4)))
+
   (setq userPath (file-truename "~/reveal.js"))
 
   (setq org-reveal-root (concat "file://" userPath)
