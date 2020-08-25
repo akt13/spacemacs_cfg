@@ -610,3 +610,8 @@ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
      - C-c C-, followed by s
    - Insert new bullet item
      - press *o*
+** Neotree folder icons
+   - Install all the required fonts using
+     #+begin_quote
+     M-x all-the-icons-install-fonts
+     #+end_quote
