@@ -75,7 +75,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '((vterm :location "/Users/sarath/emacs-libvterm"))
+   dotspacemacs-additional-packages '(
+                                      (vterm :location "/Users/sarath/emacs-libvterm")
+                                      (all-the-icons)
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -349,6 +352,8 @@ you should place your code here."
   (setq org-reveal-root (concat "file://" userPath))
 
   (setq org-image-actual-width nil)
+  (setq neo-theme 'icons)
+
   )
 
 
