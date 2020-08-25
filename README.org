@@ -604,3 +604,9 @@ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
     To enable the mode globally without dropping to a shell:
 
     (add-hook 'magit-mode-hook 'magit-svn-mode)
+* Keyboard shortcuts
+** Org mode
+   - insert source block
+     - C-c C-, followed by s
+   - Insert new bullet item
+     - press *o*
