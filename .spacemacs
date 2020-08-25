@@ -345,8 +345,7 @@ you should place your code here."
 
   (setq userPath (file-truename "~/reveal.js"))
 
-  (setq org-reveal-root (concat "file://" userPath)
-        )
+  (setq org-reveal-root (concat "file://" userPath))
 
   (setq org-image-actual-width nil)
   )
