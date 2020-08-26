@@ -349,6 +349,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
            (web-mode-html-attr-name-face :inherit font-lock-variable-name-face
                                          :foreground nil)
            )
+          (doom-molokai
+           (font-lock-comment-face :slant italic)
+           (web-mode-html-attr-name-face :inherit font-lock-variable-name-face
+                                         :foreground nil)
+           )
           )
         )
   )
