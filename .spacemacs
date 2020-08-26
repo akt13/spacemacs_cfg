@@ -83,6 +83,8 @@ values."
                                       (vterm :location "/home/abhijith/emacs-libvterm")
                                       (all-the-icons)
                                       doom-themes
+                                      spaceline-all-the-icons
+                                      writeroom-mode
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -286,23 +288,16 @@ values."
    ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
    ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
    ;; This variable can also be set to a property list for finer control:
-   ;; '(:relative nil
-   ;;   :disabled-for-modes dired-mode
-   ;;                       doc-view-mode
-   ;;                       markdown-mode
-   ;;                       org-mode
-   ;;                       pdf-view-mode
-   ;;                       text-mode
-   ;;   :size-limit-kb 1000)
+   ;; dotspacemacs-line-numbers '(
+   ;;                             :disabled-for-modes dired-mode
+   ;;                             doc-view-mode
+   ;;                             markdown-mode
+   ;;                             org-mode
+   ;;                             pdf-view-mode
+   ;;                             text-mode
+   ;;                             :relative nil
+   ;;                             :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers '(
-                               :disabled-for-modes dired-mode
-                               doc-view-mode
-                               markdown-mode
-                               org-mode
-                               pdf-view-mode
-                               text-mode
-                               :relative nil)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -350,6 +345,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
            (web-mode-html-attr-name-face :inherit font-lock-variable-name-face
                                          :foreground nil)
            )
+          (doom-molokai
+           (font-lock-comment-face :slant italic)
+           (web-mode-html-attr-name-face :inherit font-lock-variable-name-face
+                                         :foreground nil)
+           )
           )
         )
   )
@@ -376,6 +376,15 @@ you should place your code here."
   (setq org-image-actual-width nil)
   (setq neo-theme 'icons)
 
+  ;; Spaceline all icons settings
+  (spaceline-all-the-icons-theme)
+  (setq spaceline-all-the-icons-separator-type 'arrow)
+  ;; (spaceline-all-the-icons--setup-anzu)
+  (spaceline-toggle-all-the-icons-vc-icon-on)
+  (spaceline-toggle-all-the-icons-fullscreen-on)
+  (spaceline-toggle-all-the-icons-git-status-on)
+  (spaceline-toggle-all-the-icons-mode-icon-on)
+  (spaceline-toggle-all-the-icons-region-info-on)
   )
 
 
@@ -386,9 +395,7 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (tern git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter diff-hl ht xterm-color shell-pop multi-term mmm-mode markdown-toc markdown-mode gh-md eshell-z eshell-prompt-extras esh-help define-word yapfify ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox pandoc-mode ox-twbs ox-reveal ox-pandoc osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint launchctl indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diminish cython-mode company-web company-statistics company-anaconda column-enforce-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

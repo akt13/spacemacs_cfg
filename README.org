@@ -63,7 +63,7 @@ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
 
 ** Pylintrc
    - To ignore frequent warnings
-     #+BEGIN_SRC
+     #+BEGIN_SRC shell
  [MASTER]
 
  # A comma-separated list of package or module names from where C extensions may
@@ -615,3 +615,5 @@ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
      #+begin_quote
      M-x all-the-icons-install-fonts
      #+end_quote
+** Toggle modeline
+   SPC t m T
