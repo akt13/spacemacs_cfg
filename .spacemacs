@@ -82,6 +82,7 @@ values."
                                       (vterm :location "/Users/sarath/emacs-libvterm")
                                       (all-the-icons)
                                       doom-themes
+                                      spaceline-all-the-icons
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -380,6 +381,15 @@ you should place your code here."
   (setq org-image-actual-width nil)
   (setq neo-theme 'icons)
 
+  ;; Spaceline all icons settings
+  (spaceline-all-the-icons-theme)
+  (setq spaceline-all-the-icons-separator-type 'arrow)
+  ;; (spaceline-all-the-icons--setup-anzu)
+  (spaceline-toggle-all-the-icons-vc-icon-on)
+  (spaceline-toggle-all-the-icons-fullscreen-on)
+  (spaceline-toggle-all-the-icons-git-status-on)
+  (spaceline-toggle-all-the-icons-mode-icon-on)
+  (spaceline-toggle-all-the-icons-region-info-on)
   )
 
 
