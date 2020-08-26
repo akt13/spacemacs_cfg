@@ -615,3 +615,5 @@ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
      #+begin_quote
      M-x all-the-icons-install-fonts
      #+end_quote
+** Toggle modeline
+   SPC t m T
