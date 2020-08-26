@@ -34,6 +34,9 @@ values."
      ;; Themes-megapack conflict with font-size
      ;; themes-megapack
      ;; lsp
+
+     ;; for customising thems
+     theming
      (python :variables
              python-backend 'anaconda
              python-tab-width 4
@@ -76,7 +79,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '((vterm :location "/home/abhijith/emacs-libvterm"))
+   dotspacemacs-additional-packages '(
+                                      (vterm :location "/home/abhijith/emacs-libvterm")
+                                      (all-the-icons)
+                                      doom-themes
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -148,8 +155,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(doom-molokai
+                         doom-dracula
+                         wombat
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -286,7 +295,14 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers '(
+                               :disabled-for-modes dired-mode
+                               doc-view-mode
+                               markdown-mode
+                               org-mode
+                               pdf-view-mode
+                               text-mode
+                               :relative nil)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -327,6 +343,15 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq theming-modifications
+        '((wombat
+           ;; Font locking
+           (font-lock-comment-face :slant italic)
+           (web-mode-html-attr-name-face :inherit font-lock-variable-name-face
+                                         :foreground nil)
+           )
+          )
+        )
   )
 
 (defun dotspacemacs/user-config ()
@@ -341,14 +366,16 @@ you should place your code here."
                                 (yapf-mode 1)
                                 (flycheck-mode 1)
                                 (setq flycheck-checker 'python-pylint
-                                      flycheck-pylintrc "~/.pylintrc"))
-                                (setq-default python-indent-offset 4))
+                                      flycheck-pylintrc "~/.pylintrc")
+                                (setq-default python-indent-offset 4)))
+
   (setq userPath (file-truename "~/reveal.js"))
 
-  (setq org-reveal-root (concat "file://" userPath)
-        )
+  (setq org-reveal-root (concat "file://" userPath))
 
   (setq org-image-actual-width nil)
+  (setq neo-theme 'icons)
+
   )
 
 
