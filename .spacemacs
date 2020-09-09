@@ -45,6 +45,7 @@ values."
              python-format-on-save t
              python-sort-imports-on-save t)
      html
+     javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -81,7 +82,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      (vterm :location "/Users/sarath/emacs-libvterm")
+                                      (vterm :location "/home/abhijith/emacs-libvterm")
                                       (all-the-icons)
                                       doom-themes
                                       spaceline-all-the-icons
