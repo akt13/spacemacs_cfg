@@ -4,6 +4,7 @@ flake8
 importmagic
 jedi>=0.13.0
 json-rpc>=1.8.1
+mypy
 pylint
 service_factory>=0.1.5
 virtualenvwrapper
