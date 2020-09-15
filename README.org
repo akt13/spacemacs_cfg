@@ -604,6 +604,11 @@ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment
     To enable the mode globally without dropping to a shell:
 
     (add-hook 'magit-mode-hook 'magit-svn-mode)
+** Javascript layer dependencies
+   #+BEGIN_SRC shell
+   npm install -g tern
+   #+END_SRC
+
 * Keyboard shortcuts
 ** Org mode
    - insert source block
